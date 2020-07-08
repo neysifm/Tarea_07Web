@@ -1,0 +1,90 @@
+﻿@model ReflectionIT.Mvc.Paging.PagingList<Tarea_07Web.Models.Estudiante>
+
+@{
+    ViewData["Title"] = "Estudiantes";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3 class="col-lg-offset-5" style="font-family:Cambria"><strong>Listado de Estudiantes</strong></h3>
+
+<div>
+    <form method="get" class="form-inline" asp-action="Index">
+        <input name="filter" class="form-control" placeholder="Filtro"
+               value="@Model.RouteValue["Filter"]" />
+        <button type="submit" class="btn  btn-primary">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar
+        </button>
+
+        <a asp-action="Create" class="btn btn-success btn-sm pull-right">
+            <span class="glyphicon glyphicon-plus"></span>  Crear Estudiante
+        </a>
+    </form>
+</div>
+
+<div class="box box-danger">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.SortableHeaderFor(model => model.Matricula)
+                </th>
+                <th>
+                    @Html.SortableHeaderFor(model => model.Cedula)
+                </th>
+                <th>
+                    @Html.SortableHeaderFor(model => model.FechaIngreso)
+                </th>
+                <th>
+                    @Html.SortableHeaderFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.SortableHeaderFor(model => model.Apellido)
+                </th>
+                <th>
+                    @Html.SortableHeaderFor(model => model.Ocupacion)
+                </th>
+                <th>
+                    @Html.SortableHeaderFor(model => model.Carrera)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Matricula)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cedula)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaIngreso)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Apellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ocupacion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Carrera)
+                    </td>
+
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-info-circle"></i></a>
+                        <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a>
+                        <a asp-action="Delete" asp-route-id="@item.Id"><i class="fa fa-remove"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <nav aria-label="Roles navigation example">
+        <vc:pager paging-list="@Model" />
+    </nav>
+</div>

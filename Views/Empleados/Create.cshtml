@@ -1,0 +1,199 @@
+﻿@model Tarea_07Web.Models.Empleado
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+
+        <div class="box box-danger" style="background-color:white">
+            <div class="box-header with-border">
+                <br />
+                <h1 class="col-lg-offset-4" style="font-family:Cambria"><strong>Crear nuevo Empleado</strong></h1>
+            </div>
+            <div class="box-body">
+
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            <label asp-for="Codigo" class="control-label"></label>
+                            <input asp-for="Codigo" class="form-control" />
+                            <span asp-validation-for="Codigo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label asp-for="Cedula" class="control-label"></label>
+                            <input asp-for="Cedula" class="form-control" />
+                            <span asp-validation-for="Cedula" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label asp-for="FechaIngreso" class="control-label"></label>
+                            <input asp-for="FechaIngreso" class="form-control" />
+                            <span asp-validation-for="FechaIngreso" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class=" row">
+                        <div class="form-group col-lg-4">
+                            <label asp-for="Nombre" class="control-label"></label>
+                            <input asp-for="Nombre" class="form-control" />
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label asp-for="Apellido" class="control-label"></label>
+                            <input asp-for="Apellido" class="form-control" />
+                            <span asp-validation-for="Apellido" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label asp-for="FechaNacimiento" class="control-label"></label>
+                            <input asp-for="FechaNacimiento" class="form-control" />
+                            <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class=" row">
+                        <div class="form-group col-lg-4">
+                            <label asp-for="Nacionalidad" class="control-label"></label>
+                            <input asp-for="Nacionalidad" class="form-control" />
+                            <span asp-validation-for="Nacionalidad" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-lg-4">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label asp-for="Salariomensual" class="control-label"></label>
+                            <input asp-for="Salariomensual" class="form-control" />
+                            <span asp-validation-for="Salariomensual" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            <label asp-for="Direccion" class="control-label"></label>
+                            <input asp-for="Direccion" class="form-control" />
+                            <span asp-validation-for="Direccion" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label asp-for="EstadoCivil" class="control-label"></label>
+                            <input asp-for="EstadoCivil" class="form-control" />
+                            <span asp-validation-for="EstadoCivil" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label asp-for="Sexo" class="control-label"></label>
+                            <br />
+                            <input type="radio" name="sexo" checked value="F" />Femenino
+                            <input type="radio" name="sexo" value="M" />Masculino
+                            <span asp-validation-for="Sexo" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            <label asp-for="AFP" class="control-label"></label>
+                            <select style="width:337px">
+                                <option value="crecer">Crecer</option>
+                                <option value="popular">Popular</option>
+                                <option value="reservas">Reservas</option>
+                                <option value="atlantico">Atlantico</option>
+                            </select>
+                            <span asp-validation-for="AFP" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label asp-for="ARS" class="control-label"></label>
+                            <select style="width:337px">
+                                <option value="semma">Semma</option>
+                                <option value="humano">Humano</option>
+                                <option value="senasa">Senasa</option>
+                            </select>
+                            <span asp-validation-for="ARS" class="text-danger"></span>
+                        </div>
+                        <div class=" form-group col-lg-4">
+                            <label asp-for="Departamento" class="control-label"></label>
+                            <select style="width:337px">
+                                <option value="Administrativo">Administrativo</option>
+                                <option value="finaciero">Financiero</option>
+                                <option value="recursoshumano">Recursos Humanos</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="logisticayoperaciones">Logística y Operaciones</option>
+                            </select>
+                            <span asp-validation-for="Departamento" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            <label asp-for="TipoSangre" class="control-label">Tipo Sangre</label>
+                            <select style="width:337px">
+                                <option value="a-positivo">A+</option>
+                                <option value="a-negativo">A-</option>
+                                <option value="b-positivo">B+</option>
+                                <option value="o-positivo">O+</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-lg-4">
+                            <label asp-for="Religion" class="control-label">Religión</label>
+                            <select style="width:337px">
+                                <option value="catolica">Católica</option>
+                                <option value="evangelica">Evangelica</option>
+                                <option value="adventista">Adventista</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-lg-4">
+                            <label asp-for="Ocupacion" class="control-label">Ocupación</label>
+                            <select style="width:337px">
+                                <option value="mercadologo">Mercadologo</option>
+                                <option value="doctor">Doctor</option>
+                                <option value="ingenierocivil">Ingeniero Civil</option>
+                                <option value="odontologo">Odontologo</option>
+                                <option value="ingenieroensistemas">Ingeniero en Sistemas</option>
+                                <option value="contable">Contable</option>
+                                <option value="administrador">Administrador</option>
+                                <option value="terapeuta">Terapeuta</option>
+                                <option value="comerciante">Comerciante</option>
+                                <option value="agricultor">Agricultor</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            <label asp-for="Contactoemergencia" class="control-label"></label>
+                            <input asp-for="Contactoemergencia" class="form-control" />
+                            <span asp-validation-for="Contactoemergencia" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-lg-offset-4">
+                            <label class="col-lg-offset-2" style="color: black;" for="observaciones"><strong>Observaciones</strong></label> <br>
+                            <textarea name="observaciones" id="observaciones" cols="45" rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <a asp-action="Index" class="btn btn-danger fas fa-arrow-alt-circle-left">Regresar</a>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Crear Empleado" class="btn btn-success " />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}

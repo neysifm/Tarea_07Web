@@ -1,0 +1,156 @@
+﻿@model Tarea_07Web.Models.Estudiante
+
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="col-md-12">
+
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <br />
+            <h1 class="col-lg-offset-4" style="font-family:Cambria"><strong>Esta Accion no se podra deshacer</strong></h1>
+        </div>
+
+        <div class="box-body">
+
+            <hr />
+            <div class="row">
+                <dl class="row">
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.Id)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Id)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.Matricula)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Matricula)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.Cedula)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Cedula)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.FechaNacimiento)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.FechaNacimiento)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.FechaIngreso)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.FechaIngreso)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Nombre)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.Apellido)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Apellido)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.Sexo)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Sexo)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.EstadoCivil)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.EstadoCivil)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.Ocupacion)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Ocupacion)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.TipoSangre)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.TipoSangre)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.Nacionalidad)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Nacionalidad)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.Religion)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Religion)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.Telefono)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Telefono)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.NombrePadre)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.NombrePadre)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.NombreMadre)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.NombreMadre)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.Direccion)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Direccion)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.TipoColegio)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.TipoColegio)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.Carrera)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Carrera)
+                    </dd>
+                    <dt class="col-lg-3 col-lg-offset-4">
+                        @Html.DisplayNameFor(model => model.Observaciones)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Observaciones)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<form asp-action="Delete">
+    <a asp-action="Index" class="btn btn-primary fas fa-arrow-alt-circle-left">Regresar</a>
+    <input type="submit" value="Eliminar" class="btn btn-danger col-lg-offset-4" /> |
+</form>
+
